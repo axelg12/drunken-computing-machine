@@ -4,7 +4,7 @@ from articles.models import *
 
 def getTeachers(request):
 	teachers = teacher.objects.all().order_by('name')
-	return render(request, 'teacherTemp.html', {'teachers': teachers})
+	return render(request, 'index.html', {'teachers': teachers})
 
 
 # Create your views here.
