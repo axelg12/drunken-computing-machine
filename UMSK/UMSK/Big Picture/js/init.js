@@ -15,7 +15,7 @@
 
 		// skel
 			skel: {
-				prefix: '/static/css/style',
+				prefix: 'css/style',
 				resetCSS: true,
 				useOrientation: true,
 				boxModel: 'border',
