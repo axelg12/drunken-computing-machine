@@ -6,13 +6,13 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
-		<script src="{{ STATIC_URL }}js/jquery.poptrox.min.js"></script>
-		<script src="{{ STATIC_URL }}js/skel.min.js"></script>
-		<script src="{{ STATIC_URL }}js/init.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.poptrox.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
 		<noscript>
-			<link rel="stylesheet" href="{{ STATIC_URL }}css/skel-noscript.css" />
-			<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
@@ -22,7 +22,7 @@
 			<header id="header">
 
 				<!-- Logo -->
-					<h1 id="logo"><a href="#">UMSK</a></h1>
+					<h1 id="logo"><a href="#">Big Picture</a></h1>
 				
 				<!-- Nav -->
 					<nav id="nav">
@@ -31,7 +31,7 @@
 							<li><a href="#one">What I Do</a></li>
 							<li><a href="#two">Who I Am</a></li>
 							<li><a href="#work">My Work</a></li>
-							<li><a href="#contact">Landbúnaðarháskóli Íslands</a></li>
+							<li><a href="www.lbhi.is">Landbúnaðarháskóli Íslands</a></li>
 						</ul>
 					</nav>
 
@@ -95,16 +95,16 @@
 					-->
 						<div class="container small gallery">
 							<div class="row flush images">
-								<div class="6u"><a href="{{ STATIC_URL }}images/fulls/01.jpg" class="image full l"><img src="{{ STATIC_URL }}images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
-								<div class="6u"><a href="{{ STATIC_URL }}images/fulls/02.jpg" class="image full r"><img src="{{ STATIC_URL }}images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
+								<div class="6u"><a href="images/fulls/01.jpg" class="image full l"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
+								<div class="6u"><a href="images/fulls/02.jpg" class="image full r"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
 							</div>
 							<div class="row flush images">
-								<div class="6u"><a href="{{ STATIC_URL }}images/fulls/03.jpg" class="image full l"><img src="{{ STATIC_URL }}images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
-								<div class="6u"><a href="{{ STATIC_URL }}images/fulls/04.jpg" class="image full r"><img src="{{ STATIC_URL }}images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
+								<div class="6u"><a href="images/fulls/03.jpg" class="image full l"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
+								<div class="6u"><a href="images/fulls/04.jpg" class="image full r"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
 							</div>
 							<div class="row flush images">
-								<div class="6u"><a href="{{ STATIC_URL }}images/fulls/05.jpg" class="image full l"><img src="{{ STATIC_URL }}images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
-								<div class="6u"><a href="{{ STATIC_URL }}images/fulls/06.jpg" class="image full r"><img src="{{ STATIC_URL }}images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
+								<div class="6u"><a href="images/fulls/05.jpg" class="image full l"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
+								<div class="6u"><a href="images/fulls/06.jpg" class="image full r"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
 							</div>
 						</div>
 
@@ -115,10 +115,34 @@
 			<section id="contact" class="main style3 secondary">
 				<div class="content container">
 					<header>
-						<h2>Landbúnaðarháskóli Íslands</h2>
-						<p>Landbúnaðarskóli Íslands er staðsettur á Hvanneyri. Nánari upplýsingar er að finna <a href="http://www.lbhi.is">hér</a></p>
+						<h2>Say Hello.</h2>
+						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
 					</header>
 					<div class="box container small">
+					
+						<!--
+							 Contact Form
+							 
+							 To get this working, place a script on your server to receive the form data, then
+							 point the "action" attribute to it (eg. action="http://mydomain.tld/mail.php").
+							 More on how it all works here: http://www.1stwebdesigner.com/tutorials/custom-php-contact-forms/
+						-->
+							<form method="post" action="#">
+								<div class="row half">
+									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u"><input type="text" name="email" placeholder="Email" /></div>
+								</div>
+								<div class="row half">
+									<div class="12u"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<ul class="actions">
+											<li><input type="submit" class="button" value="Send Message" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
 
 					</div>
 				</div>
@@ -134,7 +158,7 @@
 				-->
 					<ul class="actions">
 						<li><a href="#" class="fa solo fa-twitter"><span>Twitter</span></a></li>
-						<li><a href="https://www.facebook.com/lbhi.is" class="fa solo fa-facebook"><span>Facebook</span></a></li>
+						<li><a href="#" class="fa solo fa-facebook"><span>Facebook</span></a></li>
 						<li><a href="#" class="fa solo fa-google-plus"><span>Google+</span></a></li>
 						<li><a href="#" class="fa solo fa-dribbble"><span>Dribbble</span></a></li>
 						<li><a href="#" class="fa solo fa-pinterest"><span>Pinterest</span></a></li>
@@ -143,7 +167,7 @@
 
 				<!-- Menu -->
 					<ul class="menu">
-						<li>&copy; Axel&ampArnar</li>
+						<li>&copy; Untitled</li>
 						<li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
 					</ul>
 			
