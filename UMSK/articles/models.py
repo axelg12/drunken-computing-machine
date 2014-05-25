@@ -47,10 +47,10 @@ class TextInformation(models.Model):
 		return self.name
 
 class Registration(models.Model):
-	reg_date = models.CharField(max_length=255)
+	reg_date = models.DateField(auto_now=False, auto_now_add=False)
 	reg_link = models.CharField(max_length=255)
 
 	def __unicode__(self):
-		return self.reg_date
+		return str(self.reg_date) + ' - ' + self.reg_link
 
 

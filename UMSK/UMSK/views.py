@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from articles.models import Image
+from articles.models import Image, Registration
 
 
 def index(request):
@@ -16,4 +16,6 @@ def index(request):
 	for img in visible_images:
 		img.picture = str(img.picture).strip('UMSK/')
 
-	return render(request, 'index.html', {'images': visible_images})
+	links = Registration.objects.first()
+
+	return render(request, 'index.html', {'images': visible_images, 'link': links})
