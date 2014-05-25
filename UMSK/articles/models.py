@@ -36,6 +36,7 @@ class Image(models.Model):
 	def __unicode__(self):
 		return self.name
 
+
 class TextInformation(models.Model):
 	text_info_id = models.CharField(max_length=50, choices=[
 		('a','Hvað geri ég'),
@@ -45,10 +46,11 @@ class TextInformation(models.Model):
 
 	def __unicode__(self):
 		return self.name
+		
 
 class Registration(models.Model):
-	reg_date = models.DateField(auto_now=False, auto_now_add=False)
-	reg_link = models.CharField(max_length=255)
+	reg_date = models.DateField(auto_now=False, auto_now_add=False, verbose_name=u'Dagsetning við lok skráningar')
+	reg_link = models.CharField(max_length=255, verbose_name=u'Slóð á skráningu (ekki gleyma http://)')
 
 	def __unicode__(self):
 		return str(self.reg_date) + ' - ' + self.reg_link
