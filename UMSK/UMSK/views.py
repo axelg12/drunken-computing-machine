@@ -8,5 +8,7 @@ def index():
 	used_slots = []
 	for img in images:
 		if img.slot_number not in used_slots:
+			used_slots.append(img.slot_number)
+			visible_images.append(img)
 			
 	return render(request, 'index.html', {'images': images})
