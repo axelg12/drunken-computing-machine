@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from articles import views as articles
+from views import index
 
 from django.contrib import admin
 admin.autodiscover()
@@ -11,6 +12,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^teachers$', articles.getTeachers),
-    url(r'^$', articles.getTeachers),
+    url(r'^$', index, name='home'),
     #url(r'^hello/$', UMSK.hello),
 )
