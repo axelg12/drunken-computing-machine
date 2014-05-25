@@ -278,6 +278,7 @@
 
 			.image.full
 			{
+				max-height: 276px;
 				display: block;
 				width: 100%;
 			}
