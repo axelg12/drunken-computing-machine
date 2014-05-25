@@ -22,13 +22,13 @@ class Image(models.Model):
 		(1, '1. Bakgrunnur'), 
 		(2, '2. Bakgrunnur'), 
 		(3, '3. Bakgrunnur'), 
-		(4, '1. litil'), 
-		(5, '2. litil'), 
-		(6, '3. litil'), 
-		(7, '4. litil'), 
-		(8, '5. litil'), 
-		(9, '6. litil'), 
-		(1, '7. litil')])
+		(4, '1. lítil'), 
+		(5, '2. lítil'), 
+		(6, '3. lítil'), 
+		(7, '4. lítil'), 
+		(8, '5. lítil'), 
+		(9, '6. lítil'), 
+		(1, '7. lítil')])
 	visible = models.BooleanField(default=True)
 
 	def __unicode__(self):
