@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from articles.models import Image, Teacher, Registration
+from articles.models import Image, TextInformation, Registration
 
 admin.site.register(Image)
-admin.site.register(Teacher)
+admin.site.register(TextInformation)
 admin.site.register(Registration)

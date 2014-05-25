@@ -36,10 +36,12 @@ class Image(models.Model):
 	def __unicode__(self):
 		return self.name
 
-class Teacher(models.Model):
-	name = models.CharField(max_length=255)
-	position = models.CharField(max_length=255)
-	email = models.EmailField(max_length=255)
+class TextInformation(models.Model):
+	text_info_id = models.CharField(max_length=50, choices=[
+		('a','Hvað geri ég'),
+		('b','Hver er ég'),
+		('c','Verkefni')])
+	text_info = models.TextField()
 
 	def __unicode__(self):
 		return self.name
