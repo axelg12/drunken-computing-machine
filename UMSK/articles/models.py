@@ -1,5 +1,15 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+#
+#def get_file_path(instance, filename):
+#    filename = "%s.%s" % (uuid.uuid4(), ext)
+#    return os.path.join('uploads/logos', filename)
+
+def update_filename(instance, filename):
+    path = "upload/path/"
+    ext = filename.split('.')[-1]
+    format = 'someshit'+ ext
+    return os.path.join(path, format)
 
 choices = [
 		(1, '1. Bakgrunnur'), 
