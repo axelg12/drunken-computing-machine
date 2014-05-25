@@ -55,8 +55,9 @@ class Image(models.Model):
 	def __unicode__(self):
 		return self.name
 
-class TextImages(models.Model):
-	text = models.CharField(max_length=255)
+class TextImage(models.Model):
+	text = models.TextField(max_length=255)
+	slot_number_text = IntegerRangeField(min_value=1, max_value=6, choices=choicesSmall)
 
 class TextInformation(models.Model):
 	text_info_id = models.CharField(max_length=50, choices=[
