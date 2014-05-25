@@ -17,7 +17,17 @@ class Image(models.Model):
 	picture = models.FileField(upload_to='images/', default='images/default.png')
 	caption = models.CharField(max_length=255, blank=True)
 	publish_date = models.DateField()
-	slot_number = IntegerRangeField(min_value=1, max_value=9)
+	slot_number = IntegerRangeField(min_value=1, max_value=9, choices=[
+		(1, '1. Bakgrunnur'), 
+		(2, '2. Bakgrunnur'), 
+		(3, '3. Bakgrunnur'), 
+		(4, '1. lítil'), 
+		(5, '2. lítil'), 
+		(6, '3. lítil'), 
+		(7, '4. lítil'), 
+		(8, '5. lítil'), 
+		(9, '6. lítil'), 
+		(1, '7. lítil')])
 	visible = models.BooleanField(default=True)
 
 	def __unicode__(self):
