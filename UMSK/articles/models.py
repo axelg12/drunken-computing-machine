@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+import os
 #
 #def get_file_path(instance, filename):
 #    filename = "%s.%s" % (uuid.uuid4(), ext)
 #    return os.path.join('uploads/logos', filename)
 
-def update_filename(instance, filename):
-    path = "upload/path/"
+def update_filename(filename, slot):
+    path = "UMSK/static/images/uploads/"
     ext = filename.split('.')[-1]
-    format = 'someshit'+ ext
+    format = 'someshit.'+ ext
     return os.path.join(path, format)
 
 choices = [
@@ -66,7 +67,7 @@ class TextInformation(models.Model):
 
 	def __unicode__(self):
 		return self.name
-		
+
 
 class Registration(models.Model):
 	reg_date = models.DateField(auto_now=False, auto_now_add=False, verbose_name=u'Dagsetning við lok skráningar')
