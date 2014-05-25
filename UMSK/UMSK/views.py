@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from articles.models import Image, Registration
+from articles.models import Image, Registration, update_filename
 
 
 def index(request):
@@ -14,7 +14,9 @@ def index(request):
 
 	visible_images = sorted(visible_images, key=lambda image: image.slot_number)
 	for img in visible_images:
-		img.picture = str(img.picture).strip('UMSK/')
+		name = str(img.picture).split('/')[-1]
+		img.picture = update_filename(name, img.slot_number)
+		img.save()
 
 	links = Registration.objects.first()
 
