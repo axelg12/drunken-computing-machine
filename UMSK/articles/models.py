@@ -46,7 +46,7 @@ class TextInformation(models.Model):
 
 	def __unicode__(self):
 		return self.name
-		
+
 
 class Registration(models.Model):
 	reg_date = models.DateField(auto_now=False, auto_now_add=False, verbose_name=u'Dagsetning við lok skráningar')
