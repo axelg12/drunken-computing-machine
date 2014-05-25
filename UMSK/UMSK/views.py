@@ -1,4 +1,7 @@
 from django.http import HttpResponse
+from articles import Image
 
-def hello(request):
-	return HttpResponse("Hello World")
+
+def index():
+	images = Image.objects.all()
+	return render(request, 'index.html', {'images': images})
