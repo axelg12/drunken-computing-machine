@@ -22,7 +22,8 @@ def update_filename(filename, slot):
     	9: 'pic06',
     }[slot]
     if filename != (result + '.jpg'):
-        print 'why dont you like me :('
+        image = Image.objects.filter(picture=os.path.join(path, result + '.jpg'))
+        image.delete()
         os.remove(os.path.join(path, result + '.jpg'))
         move(os.path.join(path, filename), path + result + '.jpg')
         return os.path.join(path, result + '.jpg')
