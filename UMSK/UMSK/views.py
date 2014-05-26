@@ -15,4 +15,6 @@ def index(request):
 
 	text = TextInformation.objects()
 
+	caption = 
+
 	return render(request, 'index.html', {'images': images, 'link': links})
