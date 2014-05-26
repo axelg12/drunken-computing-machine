@@ -79,9 +79,9 @@ class TextImage(models.Model):
 
 class TextInformation(models.Model):
 	text_info_id = models.CharField(max_length=50, choices=[
-		(0,'Hvað geri ég'),
-		(1,'Hver er ég'),
-		(2,'Verkefni')])
+		('a','Hvað geri ég'),
+		('b','Hver er ég'),
+		('c','Verkefni')])
 	text_info = models.TextField()
 
 	def __unicode__(self):

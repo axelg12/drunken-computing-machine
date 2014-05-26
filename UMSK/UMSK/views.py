@@ -13,16 +13,15 @@ def index(request):
 
 	links = Registration.objects.first()
 
-	texts = []
-	for i in range(0,3):
-		text = TextInformation.objects.filter(text_info_id=i).last()
-		if text:
-			texts.append(text)
+	text1 = TextInformation.objects.filter(text_info_id='a').last()
+	text2 = TextInformation.objects.filter(text_info_id='b').last()
+	text3 = TextInformation.objects.filter(text_info_id='c').last()
 
-	captions = []
-	for i in range(0,6):
-		caption = Image.objects.filter(slot_number=i).last()
-		if caption:
-			captions.append(caption)
+	caption1 = Image.objects.filter(slot_number=4).last()
+	caption2 = Image.objects.filter(slot_number=5).last()
+	caption3 = Image.objects.filter(slot_number=6).last()
+	caption4 = Image.objects.filter(slot_number=7).last()
+	caption5 = Image.objects.filter(slot_number=8).last()
+	caption6 = Image.objects.filter(slot_number=9).last()
 
-	return render(request, 'index.html', {'images': images, 'link': links, 'texts': texts, 'captions': captions })
+	return render(request, 'index.html', {'images': images, 'link': links, 'text1': text1, 'text2': text2, 'text3': text3, 'caption1': caption1, 'caption2': caption2, 'caption3': caption3, 'caption4': caption4, 'caption5': caption5, 'caption6': caption6 })

@@ -42,11 +42,7 @@
 				<div class="content container small">
 					<header>
 						<h2>Hey. 
-							{% if link %}
-							<a href="{{link.reg_link}}">YO, THE LINK IS HERE {{link.reg_date}}</a>
-							{% else %}
-							<a href="http://mbl.is">MBL</a>
-							{% endif %}
+							YO, THE LINK IS HERE
 						</h2>
 					</header>
 					<p>Welcome to <strong>Big Picture</strong> a responsive site template designed
@@ -64,9 +60,11 @@
 					<header>
 						<h2>What I Do</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, 
-					id varius justo euismod in. Curabitur egestas consectetur magna urna.</p>
+					{% if text1 %}
+					<p>{{text1.text_info}}</p>
+					{% else %}
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, porro, sit, exercitationem cumque reiciendis assumenda fuga totam hic ducimus minus voluptatum beatae ipsam veritatis. Obcaecati odio cum incidunt maiores iste.</p>
+					{% endif %}
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
@@ -77,9 +75,11 @@
 					<header>
 						<h2>Who I Am</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, 
-					id varius justo euismod in. Curabitur egestas consectetur magna urna.</p>
+					{% if text2 %}
+					<p>{{text2.text_info}}</p>
+					{% else %}
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, porro, sit, exercitationem cumque reiciendis assumenda fuga totam hic ducimus minus voluptatum beatae ipsam veritatis. Obcaecati odio cum incidunt maiores iste.</p>
+					{% endif %}
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
@@ -89,9 +89,11 @@
 				<div class="content container">
 					<header>
 						<h2>My Work</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
-						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis 
-						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae urna.</p>
+					{% if text3 %}
+					<p>{{text3.text_info}}</p>
+					{% else %}
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, porro, sit, exercitationem cumque reiciendis assumenda fuga totam hic ducimus minus voluptatum beatae ipsam veritatis. Obcaecati odio cum incidunt maiores iste.</p>
+					{% endif %}
 					</header>
 					
 					<!--
@@ -101,16 +103,16 @@
 					-->
 						<div class="container small gallery">
 							<div class="row flush images">
-								<div class="6u"><a href="{{ STATIC_URL }}images/pic01.jpg" class="image full l"><img src="{{ STATIC_URL }}images/pic01.jpg" title="The Anonymous Red" alt="" /></a></div>
-								<div class="6u"><a href="{{ STATIC_URL }}images/pic02.jpg" class="image full r"><img src="{{ STATIC_URL }}images/pic02.jpg" title="Airchitecture II" alt="" /></a></div>
+								<div class="6u"><a href="{{ STATIC_URL }}images/pic01.jpg" class="image full l"><img src="{{ STATIC_URL }}images/pic01.jpg" title="{{ caption1.caption }}" alt="" /></a></div>
+								<div class="6u"><a href="{{ STATIC_URL }}images/pic02.jpg" class="image full r"><img src="{{ STATIC_URL }}images/pic02.jpg" title="{{ caption2.caption }}" alt="" /></a></div>
 							</div>
 							<div class="row flush images">
-								<div class="6u"><a href="{{ STATIC_URL }}images/pic03.jpg" class="image full l"><img src="{{ STATIC_URL }}images/pic03.jpg" title="Air Lounge" alt="" /></a></div>
-								<div class="6u"><a href="{{ STATIC_URL }}images/pic04.jpg" class="image full r"><img src="{{ STATIC_URL }}images/pic04.jpg" title="Carry on" alt="" /></a></div>
+								<div class="6u"><a href="{{ STATIC_URL }}images/pic03.jpg" class="image full l"><img src="{{ STATIC_URL }}images/pic03.jpg" title="{{ caption3.caption }}" alt="" /></a></div>
+								<div class="6u"><a href="{{ STATIC_URL }}images/pic04.jpg" class="image full r"><img src="{{ STATIC_URL }}images/pic04.jpg" title="{{ caption4.caption }}" alt="" /></a></div>
 							</div>
 							<div class="row flush images">
-								<div class="6u"><a href="{{ STATIC_URL }}images/pic05.jpg" class="image full l"><img src="{{ STATIC_URL }}images/pic05.jpg" title="The sparkling shell" alt="" /></a></div>
-								<div class="6u"><a href="{{ STATIC_URL }}images/pic06.jpg" class="image full r"><img src="{{ STATIC_URL }}images/pic06.jpg" title="Bent IX" alt="" /></a></div>
+								<div class="6u"><a href="{{ STATIC_URL }}images/pic05.jpg" class="image full l"><img src="{{ STATIC_URL }}images/pic05.jpg" title="{{ caption5.caption }}" alt="" /></a></div>
+								<div class="6u"><a href="{{ STATIC_URL }}images/pic06.jpg" class="image full r"><img src="{{ STATIC_URL }}images/pic06.jpg" title="{{ caption6.caption }}" alt="" /></a></div>
 							</div>
 						</div>
 
@@ -122,7 +124,12 @@
 				<div class="content container">
 					<header>
 						<h2>Landbúnaðarháskóli Íslands</h2>
-						<p>Landbúnaðarskóli Íslands er staðsettur á Hvanneyri. Nánari upplýsingar er að finna <a href="http://www.lbhi.is">hér</a></p>
+						<p>Landbúnaðarskóli Íslands er staðsettur á Hvanneyri. Til að sækja um að stunda nám við Umhverfisskipulag er hægt að klikka
+						{% if link %}
+							<a href="{{link.reg_link}}">Hér </a>
+							{% else %}
+							<a href="http://lbhi.is">Hér</a>
+						{% endif %}</p>
 					</header>
 					<div class="box container small">
 
@@ -139,12 +146,7 @@
 				     Use anything from here: http://fortawesome.github.io/Font-Awesome/cheatsheet/)
 				-->
 					<ul class="actions">
-						<li><a href="#" class="fa solo fa-twitter"><span>Twitter</span></a></li>
-						<li><a href="https://www.facebook.com/lbhi.is" class="fa solo fa-facebook"><span>Facebook</span></a></li>
-						<li><a href="#" class="fa solo fa-google-plus"><span>Google+</span></a></li>
-						<li><a href="#" class="fa solo fa-dribbble"><span>Dribbble</span></a></li>
-						<li><a href="#" class="fa solo fa-pinterest"><span>Pinterest</span></a></li>
-						<li><a href="#" class="fa solo fa-instagram"><span>Instagram</span></a></li>
+						<li><a href="https://www.facebook.com/umhverfisskipulag.lbhi" class="fa solo fa-facebook"><span>Facebook</span></a></li>
 					</ul>
 
 				<!-- Menu -->
