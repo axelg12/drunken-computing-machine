@@ -13,7 +13,7 @@ def index(request):
 
 	links = Registration.objects.first()
 
-	text = TextInformation.objects()
+	text = TextInformation.objects.all()
 
 	caption = 
 
