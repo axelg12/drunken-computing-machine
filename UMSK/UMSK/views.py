@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from articles.models import Image, Registration, update_filename
+from articles.models import Image, Registration, update_filename, TextInformation
 
 
 def index(request):
@@ -13,13 +13,11 @@ def index(request):
 
 	links = Registration.objects.first()
 
-	
-	text = TextInformation.objects.all()
-
-	for t in text:
-		delete_existing_text(t.text_info_id)
-
-
+	texts = []
+	for i in range(0,3):
+		text = TextInformation.objects.filter(text_info_id=i).last()
+		texts.append(text)
+		
 	caption = None
 
 	return render(request, 'index.html', {'images': images, 'link': links})
