@@ -22,3 +22,4 @@ def index(request):
 	caption = None
 
 	return render(request, 'index.html', {'images': images, 'link': links, 'texts': texts})
+
