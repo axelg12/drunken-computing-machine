@@ -86,8 +86,7 @@ class TextInformation(models.Model):
 	text_info = models.TextField()
 
 	def __unicode__(self):
-		return self.name
-
+		return self.text_info_id
 
 class Registration(models.Model):
 	reg_date = models.DateField(auto_now=False, auto_now_add=False, verbose_name=u'Dagsetning við lok skráningar')
