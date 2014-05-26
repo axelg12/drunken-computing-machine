@@ -31,7 +31,7 @@ def update_filename(filename, slot):
     return os.path.join(path, filename)
 
 def delete_existing_text(textId):
-	text = TextInformation.objects.filter(slot_number_text=1).last()
+	text = TextInformation.objects.filter(slot_number_text=textId).last()
 	text.delete()
 
 
