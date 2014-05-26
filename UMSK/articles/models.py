@@ -32,24 +32,24 @@ def update_filename(filename, slot):
 
 
 choices = [
-		(1, '1. Bakgrunnur'), 
-		(2, '2. Bakgrunnur'), 
-		(3, '3. Bakgrunnur'), 
-		(4, '1. lítil'), 
-		(5, '2. lítil'), 
-		(6, '3. lítil'), 
-		(7, '4. lítil'), 
-		(8, '5. lítil'), 
-		(9, '6. lítil'), 
+		(1, '1. Bakgrunnur'),
+		(2, '2. Bakgrunnur'),
+		(3, '3. Bakgrunnur'),
+		(4, '1. lítil'),
+		(5, '2. lítil'),
+		(6, '3. lítil'),
+		(7, '4. lítil'),
+		(8, '5. lítil'),
+		(9, '6. lítil'),
 		(1, '7. lítil')
 	]
 choicesSmall = [
-		(1, 'Mynd 1'), 
-		(2, 'Mynd 2'), 
-		(3, 'Mynd 3'), 
-		(4, 'Mynd 4'), 
-		(5, 'Mynd 5'), 
-		(6, 'Mynd 6'), 
+		(1, 'Mynd 1'),
+		(2, 'Mynd 2'),
+		(3, 'Mynd 3'),
+		(4, 'Mynd 4'),
+		(5, 'Mynd 5'),
+		(6, 'Mynd 6'),
 	]
 
 class IntegerRangeField(models.IntegerField):
