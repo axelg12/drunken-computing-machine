@@ -18,6 +18,10 @@ def index(request):
 		text = TextInformation.objects.filter(text_info_id=i).last()
 		texts.append(text)
 
+	caption = []
+	for i in range(0,6):
+		caption = Image.objects.filter(slot_number=i)
+
 	caption = None
 
 	return render(request, 'index.html', {'images': images, 'link': links, 'texts': texts})
