@@ -20,6 +20,7 @@ def update_filename(filename, slot):
     	8: 'pic05',
     	9: 'pic06',
     }[slot] + ext
+
     return os.path.join(path, result)
 
 choices = [
@@ -56,7 +57,7 @@ class IntegerRangeField(models.IntegerField):
 # Create your models here.
 class Image(models.Model):
 	name = models.CharField(max_length=30)
-	picture = models.FileField(upload_to='UMSK/static/images/uploads', default='static/images/default.png')
+	picture = models.FileField(upload_to='UMSK/static/images/', default='static/images/default.png')
 	caption = models.CharField(max_length=255, blank=True)
 	publish_date = models.DateField()
 	slot_number = IntegerRangeField(min_value=1, max_value=9, choices=choices)
