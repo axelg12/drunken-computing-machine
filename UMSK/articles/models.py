@@ -8,7 +8,7 @@ import os
 
 def update_filename(filename, slot):
     path = "UMSK/static/images/uploads/"
-    ext = filename.split('.')[-1]
+    ext = '.' + filename.split('.')[-1]
     result = {
     	1: 'intro',
     	2: 'one',
@@ -20,7 +20,7 @@ def update_filename(filename, slot):
     	8: 'pic05',
     	9: 'pic06',
     }[slot] + ext
-    return os.path.join(path, format)
+    return os.path.join(path, result)
 
 choices = [
 		(1, '1. Bakgrunnur'), 
