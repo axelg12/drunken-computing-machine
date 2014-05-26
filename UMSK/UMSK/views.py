@@ -19,10 +19,10 @@ def index(request):
 		if text:
 			texts.append(text)
 
-	caption = []
+	captions = []
 	for i in range(0,6):
-		caption = Image.objects.filter(slot_number=i)
+		caption = Image.objects.filter(slot_number=i).last()
+		if caption:
+			captions.append(caption)
 
-	caption = None
-
-	return render(request, 'index.html', {'images': images, 'link': links, 'texts': texts})
+	return render(request, 'index.html', {'images': images, 'link': links, 'texts': texts, 'captions': captions })
