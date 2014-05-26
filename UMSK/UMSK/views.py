@@ -17,7 +17,7 @@ def index(request):
 	for i in range(0,3):
 		text = TextInformation.objects.filter(text_info_id=i).last()
 		texts.append(text)
-		
+
 	caption = None
 
-	return render(request, 'index.html', {'images': images, 'link': links})
+	return render(request, 'index.html', {'images': images, 'link': links, 'texts': texts})
