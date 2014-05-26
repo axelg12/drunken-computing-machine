@@ -15,6 +15,6 @@ def index(request):
 
 	text = TextInformation.objects.all()
 
-	caption = 
+	caption = None
 
 	return render(request, 'index.html', {'images': images, 'link': links})
