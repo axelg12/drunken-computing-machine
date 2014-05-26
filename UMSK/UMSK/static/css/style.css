@@ -165,8 +165,10 @@
 				margin: 0 0 2em 0;
 			}
 			
+			.image.full img{
+				height: 276px;
+			}
 			.image.full {
-				max-height: 276px;
 				display: block;
 				width: 100%;
 			}
