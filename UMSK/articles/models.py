@@ -9,7 +9,17 @@ import os
 def update_filename(filename, slot):
     path = "UMSK/static/images/uploads/"
     ext = filename.split('.')[-1]
-    format = 'someshit.'+ ext
+    result = {
+    	1: 'intro',
+    	2: 'one',
+    	3: 'two',
+    	4: 'pic01',
+    	5: 'pic02',
+    	6: 'pic03',
+    	7: 'pic04',
+    	8: 'pic05',
+    	9: 'pic06',
+    }[slot] + ext
     return os.path.join(path, format)
 
 choices = [
@@ -72,7 +82,7 @@ class TextInformation(models.Model):
 
 class Registration(models.Model):
 	reg_date = models.DateField(auto_now=False, auto_now_add=False, verbose_name=u'Dagsetning við lok skráningar')
-	reg_link = models.CharField(max_length=255, verbose_name=u'Slóð á skráningu (ekki gleyma http://)')
+	reg_link = models.URLField(max_length=255, verbose_name=u'Slóð á skráningu (ekki gleyma http://)')
 
 	def __unicode__(self):
 		return str(self.reg_date) + ' - ' + self.reg_link
