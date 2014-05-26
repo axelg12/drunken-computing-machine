@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from articles.models import Image, Registration, update_filename, TextInformation
+from articles.models import Image, Registration, update_filename, TextInformation, TextImage
 
 
 def index(request):
@@ -25,6 +25,4 @@ def index(request):
 		if caption:
 			captions.append(caption)
 
-
 	return render(request, 'index.html', {'images': images, 'link': links, 'texts': texts, 'captions': captions })
-
