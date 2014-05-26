@@ -13,4 +13,6 @@ def index(request):
 
 	links = Registration.objects.first()
 
+	text = TextInformation.objects()
+
 	return render(request, 'index.html', {'images': images, 'link': links})
