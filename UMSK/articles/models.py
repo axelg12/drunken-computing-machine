@@ -30,11 +30,6 @@ def update_filename(filename, slot):
 
     return os.path.join(path, filename)
 
-def delete_existing_text(textId):
-	text = TextInformation.objects.filter(slot_number_text=textId).last()
-	text.delete()
-
-
 choices = [
 		(1, '1. Bakgrunnur'),
 		(2, '2. Bakgrunnur'),

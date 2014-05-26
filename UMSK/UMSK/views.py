@@ -13,7 +13,12 @@ def index(request):
 
 	links = Registration.objects.first()
 
+	
 	text = TextInformation.objects.all()
+
+	for t in text:
+		delete_existing_text(t.text_info_id)
+
 
 	caption = None
 
