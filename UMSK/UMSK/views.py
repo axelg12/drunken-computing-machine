@@ -16,7 +16,8 @@ def index(request):
 	texts = []
 	for i in range(0,3):
 		text = TextInformation.objects.filter(text_info_id=i).last()
-		texts.append(text)
+		if text:
+			texts.append(text)
 
 	caption = None
 
