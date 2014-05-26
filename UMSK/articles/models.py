@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 import os
+from shutil import move
 #
 #def get_file_path(instance, filename):
 #    filename = "%s.%s" % (uuid.uuid4(), ext)
 #    return os.path.join('uploads/logos', filename)
 
 def update_filename(filename, slot):
-    path = "UMSK/static/images/uploads/"
+    path = "UMSK/static/images/"
     ext = '.' + filename.split('.')[-1]
     result = {
     	1: 'intro',
@@ -19,9 +20,15 @@ def update_filename(filename, slot):
     	7: 'pic04',
     	8: 'pic05',
     	9: 'pic06',
-    }[slot] + ext
+    }[slot]
+    if filename != (result + '.jpg'):
+        print 'why dont you like me :('
+        os.remove(os.path.join(path, result + '.jpg'))
+        move(os.path.join(path, filename), path + result + '.jpg')
+        return os.path.join(path, result + '.jpg')
 
-    return os.path.join(path, result)
+    return os.path.join(path, filename)
+
 
 choices = [
 		(1, '1. Bakgrunnur'), 
