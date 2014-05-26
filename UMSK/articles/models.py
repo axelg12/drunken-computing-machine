@@ -24,6 +24,14 @@ choices = [
 		(9, '6. lítil'), 
 		(1, '7. lítil')
 	]
+choicesSmall = [
+		(1, 'Mynd 1'), 
+		(2, 'Mynd 2'), 
+		(3, 'Mynd 3'), 
+		(4, 'Mynd 4'), 
+		(5, 'Mynd 5'), 
+		(6, 'Mynd 6'), 
+	]
 
 class IntegerRangeField(models.IntegerField):
     def __init__(self, verbose_name=None, name=None, min_value=None, max_value=None, **kwargs):
@@ -47,6 +55,9 @@ class Image(models.Model):
 	def __unicode__(self):
 		return self.name
 
+class TextImage(models.Model):
+	text = models.TextField(max_length=255)
+	slot_number_text = IntegerRangeField(min_value=1, max_value=6, choices=choicesSmall)
 
 class TextInformation(models.Model):
 	text_info_id = models.CharField(max_length=50, choices=[
